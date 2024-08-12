@@ -1,0 +1,138 @@
+/* Reset and basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("backgrd.jpeg");
+  height: 100vh; /* Set viewport height */
+  width: 100vw; /* Set viewport width */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+#para {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 800;
+}
+
+p {
+  text-align: center;
+  font-weight: 400;
+  padding-top: 2rem;
+  font-weight: 500px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+h1 {
+  padding-right: 40rem;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger i {
+  font-size: 24px;
+}
+
+/* Navigation menu styles */
+nav {
+  display: flex; /* Flexbox for navigation */
+  flex: 1; /* Fill remaining space */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flexbox for list items */
+  justify-content: flex-end; /* Right-align navigation items */
+  align-items: center; /* Center items vertically */
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .hamburger {
+    display: block; /* Display hamburger on small screens */
+  }
+
+  nav {
+    display: none; /* Hide navigation initially */
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding-top: 60px; /* Add padding to avoid overlap with header */
+    z-index: 1000; /* Ensure it is on top */
+  }
+
+  nav.active {
+    display: flex; /* Display navigation on toggle */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  nav li {
+    margin: 15px 0; /* Add margin for better spacing */
+  }
+
+  nav a {
+    font-size: 18px; /* Adjust font size */
+  }
+}
+
+/* Toggle navigation on hamburger click */
+.hamburger.active + nav {
+  display: flex;
+}
